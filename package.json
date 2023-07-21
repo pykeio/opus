@@ -1,10 +1,9 @@
 {
-	"name": "@discordjs/opus",
-	"version": "0.9.0",
+	"name": "@pyke/opus",
+	"version": "0.10.0",
 	"description": "Opus bindings for Node",
 	"main": "lib/index.js",
 	"types": "typings/index.d.ts",
-	"author": "iCrawl <icrawltogo@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"install": "node-pre-gyp install --fallback-to-build",
@@ -23,11 +22,11 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/discordjs/opus.git"
+		"url": "https://github.com/pykeio/opus.git"
 	},
 	"dependencies": {
-		"@discordjs/node-pre-gyp": "^0.4.5",
-		"node-addon-api": "^5.0.0"
+		"@mapbox/node-pre-gyp": "^1.0.11",
+		"node-addon-api": "^7.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.2",
@@ -40,16 +39,14 @@
 		"typescript": "^4.8.4"
 	},
 	"engines": {
-		"node": ">=12.0.0"
+		"node": ">=14.12"
 	},
 	"binary": {
 		"module_name": "opus",
-		"module_path": "./prebuild/{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}-{libc_version}/",
+		"module_path": "./prebuild/{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}/",
 		"remote_path": "v{version}",
-		"package_name": "{module_name}-v{version}-{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}-{libc_version}.tar.gz",
-		"host": "https://github.com/discordjs/opus/releases/download/",
-		"napi_versions": [
-			3
-		]
+		"package_name": "{module_name}-v{version}-{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}.tar.gz",
+		"host": "https://parcel.pyke.io/v2/delivery/vitri-internal/packages/pyke-node-opus/",
+		"napi_versions": [ 7 ]
 	}
 }
